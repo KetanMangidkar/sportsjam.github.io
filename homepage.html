@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .maincontainer {
+            width: 100%;
+            pointer-events: painted;
+        }
+
+        /* upper css start */
+        .upper {
+            width: 100%;
+            height: 200px;
+
+        }
+
+        .logo {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav {
+            height: 40px;
+            width: 100%;
+            background-color: black;
+            color: whitesmoke;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+        .right {
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+
+        .types {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid black;
+            align-items: center;
+        }
+
+        #searchbar {
+            width: 40%;
+            height: 25px;
+            border: 2px solid black;
+        }
+
+        .types>div:hover {
+            background-color: black;
+            color: white;
+            pointer-events: stroke;
+        }
+
+        /* upper css end */
+        .advr {
+
+            height: 550px;
+            width: 100%;
+            display: flex;
+
+        }
+
+        .slider {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            width: 500%;
+            height: 100%;
+            display: flex;
+        }
+
+        .slides input {
+            display: none;
+        }
+
+        .slide {
+            width: 20%;
+            transition: 2s;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .navigation-manual {
+
+            position: initial;
+            width: 100%;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .manual-btn {
+            margin: 5px;
+            border: 2px solid teal;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .manual-btn:not(:last-child) {
+            margin-right: 40px;
+
+        }
+
+        .manual-btn:hover {
+            background: teal;
+        }
+
+        #radio1:checked~.first {
+            margin-left: 0;
+        }
+
+        #radio2:checked~.first {
+            margin-left: -20%;
+        }
+
+        #radio3:checked~.first {
+            margin-left: -40%;
+        }
+
+        #radio4:checked~.first {
+            margin-left: -60%;
+        }
+
+        #radio5:checked~.first {
+            margin-left: -80%;
+        }
+
+        .sportfit {
+            width: 100%;
+            height: 550px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .about {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 100px 400px 400px 400px 150px 400px 150px;
+            grid-gap: 30px;
+            grid-template-areas:
+                "a a"
+                "b c"
+                "d e"
+                "f f"
+                "g g"
+                "h i"
+                "j j";
+        }
+
+        .a {
+            grid-area: a;
+            text-align: center;
+            font-size: 35px;
+            padding-top: 50px;
+        }
+
+        .b {
+            grid-area: b;
+        }
+
+        .c {
+            padding: 10px;
+            text-align: justify;
+            grid-area: c;
+        }
+
+        .d {
+            grid-area: d;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .e {
+            grid-area: e;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .f {
+            grid-area: f;
+        }
+
+        .g {
+            grid-area: g;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .h {
+            grid-area: h;
+        }
+
+        .i {
+            grid-area: i;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        .j {
+            grid-area: j;
+            text-align: center;
+
+        }
+
+        #b2 {
+            height: 10%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        /* bottom start */
+        .bottom {
+            width: 100%;
+            margin-top: 20px;
+            background-color: #e1e1e1;
+            align-self: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <div class="upper">
+            <div class="nav">
+                <div class="right">
+                    <div id="signin">Sign in</div>
+                    <div id="createacc">Creat Account</div>
+                    <div id="wishlist">Wishlist</div>
+                </div>
+            </div>
+            <div class="logo">
+                <div id="weblogo">
+                    <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/logo.jpg"
+                        alt="sportsjam.in">
+                </div>
+                <input id="searchbar" type="text" placeholder="Search..">
+                <div id="shopcart"><img
+                        src="data:image/png;base64,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"
+                        alt="Cart" width="100px" height="80px"><b>Shopping Cart</b></div>
+            </div>
+            <div class="types">
+                <div onclick="window.location.href='product.html'">SPORTS</div>
+                <div onclick="window.location.href='product.html'">FITNESS</div>
+                <div onclick="window.location.href='product.html'">SHOES</div>
+                <div onclick="window.location.href='product.html'">CLOTHING</div>
+                <div onclick="window.location.href='product.html'">ACCESSORIES</div>
+                <div onclick="window.location.href='product.html'">LESURE SPORTS</div>
+                <div onclick="window.location.href='product.html'">FANGEAR</div>
+                <div onclick="window.location.href='product.html'">BRANDS</div>
+            </div>
+        </div>
+
+
+        <div class="advr">
+            <!-- slider start -->
+            <div class="slider">
+                <div class="slides">
+                    <!-- radio button start -->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <input type="radio" name="radio-btn" id="radio5">
+                    <!-- radio button end -->
+                    <!-- slide images start -->
+                    <div onclick="window.location.href='product.html'" class="slide first">
+                        <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Blade-V8-5.jpg"
+                            alt="">
+                    </div>
+                    <div onclick="window.location.href='product.html'" class="slide">
+                        <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/VCORE-PRO-2021-1.jpg"
+                            alt="">
+                    </div>
+                    <div onclick="window.location.href='product.html'" class="slide">
+                        <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/PAANY-R.jpg"
+                            alt="">
+                    </div>
+                    <div onclick="window.location.href='product.html'" class="slide">
+                        <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/PARAFA.jpg"
+                            alt="">
+                    </div>
+                    <div onclick="window.location.href='product.html'" class="slide">
+                        <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/RADICAL-AND-SPEED-BLACK-BANNER.jpg"
+                            alt="">
+                    </div>
+                    <!-- slide images end -->
+                </div>
+                <!-- manual nav start -->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                    <label for="radio5" class="manual-btn"></label>
+                </div>
+                <!-- manual nav end -->
+            </div>
+            <!-- slider end -->
+        </div>
+
+        <div class="sportfit">
+            <div>
+                <img onclick="window.location.href='product.html'"
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img1.jpg"
+                    alt="Sports" width="400px" height="500px">
+            </div>
+            <div>
+                <img onclick="window.location.href='product.html'"
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img2.jpg"
+                    alt="Fitness" width="400px" height="500px">
+            </div>
+            <div>
+                <img onclick="window.location.href='product.html'"
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/callout_img3.jpg"
+                    alt="Shoes" width="400px" height="500px">
+            </div>
+        </div>
+
+
+        <div class="about">
+            <div class="a"><b>OUR CUSTOMIZED SERVICES</b></div>
+            <div class="b">
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/bslide1.jpg"
+                        alt="" height="360" width="100%"></div>
+                <div id="b2">
+                    <div><b>RACKET STRINGING</b></div>
+                    <div><b>HYBRID STRINGING</b></div>
+                    <div><b>TT ASSEMBLY</b></div>
+                    <div><b>BAT KNOCKING</b></div>
+                </div>
+            </div>
+            <div class="c">
+                <h1>BADMINTON RACKET STRINGING</h1>
+                <p>Some players prefer to have the comfort, power and flexibility to choose a combination of features on
+                    a single string. For this, few tennis brands offer Hybrid Strings, which have one string for Mains
+                    and a different string for Crosses. Now, YOU can also create your very own hybrid string!
+                    To avail of this service at Sportsjam.in, add your favourite racquet in your order, along with
+                    Tennis String for Mains and Tennis String for Crosses (Hybrid Stringing). Please note that a good
+                    understanding of string features are required to achieve an optimum balance between comfort,
+                    durability, control and power.</p>
+                <div><input type="submit" value="READ MORE"></div>
+            </div>
+            <div class="d">
+                <img onclick="window.location.href='product.html'"
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/victor-offer.jpg"
+                    alt="" width="100%" height="360px">
+                <b>VICTOR SHOES</b>
+            </div>
+            <div class="e">
+                <img onclick="window.location.href='product.html'"
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/Slinger.jpg"
+                    alt="" width="100%" height="360px">
+                <b>SLINGER GRAND SLAM PACK</b>
+            </div>
+            <div onclick="window.location.href='product.html'" class="f">
+                <img src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/yonex-racquet-offer.jpg"
+                    alt="" height="400px" width="100%">
+            </div>
+            <div class="g">
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-02.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-08.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-11.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-25.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-33.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-37.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-43.jpg"
+                        alt=""></div>
+                <div><img onclick="window.location.href='product.html'"
+                        src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/brand-logo-05.jpg"
+                        alt=""></div>
+            </div>
+            <div class="h"><img
+                    src="https://storage.sg.content-cdn.io/in-resources/b368029c-a4dd-448a-a888-58348cb1b144/Images/userimages/bta-store.jpg"
+                    alt="" width="100%" height="100%"></div>
+            <div class="i">
+                <h1>ABOUT SPORTSJAM</h1>
+                <p>Let’s get going to dig out the best products in your game & make ‘em available right at your
+                    doorstep. We will be glad to serve you in any city in India & speedily, so that you enjoy your
+                    product in the coming weekend! All this, with no shipping charges if you purchase above Rs.1000.
+                    Scout through your favourite brands with latest technologies. Just click & be its proud owner, at
+                    the best available price in the market. Come, help us help you to fly high with your new & improved
+                    game with high quality sportsgear!</p>
+                <div><input type="submit" value="FIND OUR STORE"></div>
+            </div>
+            <div class="j">
+                <h2>TESTIMONIALS</h2>
+                <p>Amazing products and Excellent Service. Whenever I have called, I have got professional, prompt and
+                    consistent reply. Even during giving the free tshirt, you guys called to know the size, but
+                    unfortunately the size is large on me. Any chances I can exchange with M size. Although I am loving
+                    my new racquet. - Rajnish, New Delhi</p>
+                <div><input type="submit" value="View All"></div>
+            </div>
+        </div>
+
+
+        <div class="bottom">
+            <img src="https://lh3.googleusercontent.com/xAQXf2j9tnzJEf53iZgMKP2wynqOJV3FZlrR4gvCCKhk7rhoMcO99Khz1M4HVVTWsnGGx02BGQxQ418MKF-XDGUV_xFICwCJhwKC0nA3"
+                alt="" width="100%" height="100px">
+            <img src="https://lh3.googleusercontent.com/eTh9h2w8OZ6roFlyTGAOhMbJRMPgJMKlkRrzpfgNSNiuhpJR-7XhCebpB0mAFEKuTwtMDNGc3s-8nyo-XQF-6rziXsINCHAiVW61lSfp"
+                alt="" width="100%" height="350px">
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.getElementById("signin").addEventListener("click", function () {
+        window.location.href = "signin.html"
+    });
+    document.getElementById("createacc").addEventListener("click", function () {
+        window.location.href = "createacc.html"
+    });
+    document.getElementById("wishlist").addEventListener("click", function () {
+        window.location.href = "wishlist.html"
+    });
+    document.getElementById("shopcart").addEventListener("click", function () {
+        window.location.href = "cart.html"
+    });
+    document.getElementById("weblogo").addEventListener("click", function () {
+        window.location.href = "homepage.html"
+    });
+</script>

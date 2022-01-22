@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .body {
+        background-color: grey;
+    }
+
+    .signcon {
+        border: 1px solid black;
+        height: 300px;
+        width: 400px;
+        margin: auto;
+        text-align: center;
+        background-color: white;
+        margin-top: 150px;
+    }
+
+    form>input {
+        height: 30px;
+        border-radius: 2.5px;
+        outline: none;
+        width: 88%;
+        border: 1px solid;
+        margin-top: 5%;
+        padding-top: 1%;
+    }
+</style>
+
+<body class="body">
+    <div class="signcon">
+        <h1>SIGN IN</h1>
+        <form>
+            <input id="email" type="text" placeholder="enter email_id">
+            <input id="pass" type="password" placeholder="enter password">
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+
+    document.querySelector("form").addEventListener("submit", signin);
+
+    var regdUsers = JSON.parse(localStorage.getItem("userDataBase"));
+    function signin(event) {
+        event.preventDefault();
+        var email = document.querySelector("#email").value;
+        var pass = document.querySelector("#pass").value;
+
+        for (var i = 0; i < regdUsers.length; i++) {
+            console.log(regdUsers[i].emailAdd, regdUsers[i].passwd);
+            if (regdUsers[i].emailAdd == email && regdUsers[i].passwd == pass) {
+                alert("login successfully")
+                window.location.href = "homepage.html"
+
+            }
+            else {
+                alert("Wrong ID and Password");
+
+            }
+        }
+    }
+</script>
